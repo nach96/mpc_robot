@@ -8,7 +8,7 @@ void FG_eval_fd::operator()(ADvector& fg, const ADvector& x)
     //-------------------------------- f(x) Objective Function --------------------------------------------------------------
     fg[0]=0;
     
-    for(int i=N_-1; i < N_; i++){  
+    for(int i=0; i < N_; i++){  
         //Calculate objective variables
         AD<double> d = CppAD::pow( CppAD::pow(x[x_start_+i]-xp_,2) + CppAD::pow(x[y_start_+i]-yp_,2), 0.5);
         AD<double> delta = (x[tita_start_+i]-ap_);
@@ -20,7 +20,7 @@ void FG_eval_fd::operator()(ADvector& fg, const ADvector& x)
         fg[0] += K3_*CppAD::pow( yaw - yaw_, 2)*(i+1);//* CppAD::pow((i+1),2);
     }
     //Penalize actions    
-    for(int i=N_-1; i<N_-1; i++){
+    for(int i=0; i<N_-1; i++){
         fg[0] += K4_*CppAD::pow(x[V_start_+i],2)*(i+1);//* CppAD::pow((i+1),2);
         fg[0] += K5_*CppAD::pow(x[W_start_+i],2)*(i+1);//* CppAD::pow((i+1),2);
     }

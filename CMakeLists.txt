@@ -51,7 +51,7 @@ link_directories(
 add_library(myNLPlib_old src/old_mynlp.cpp)
 target_link_libraries(myNLPlib_old ipopt)
 
-add_library(myNLPlib_ss src/mynlp.cpp src/mynlp_ss.cpp)
+add_library(myNLPlib_ss src/mynlp.cpp src/mynlp_ss_rk4.cpp)
 target_link_libraries(myNLPlib_ss ipopt)
 
 add_library(myNLPlib_ms src/mynlp.cpp src/mynlp_ms.cpp)

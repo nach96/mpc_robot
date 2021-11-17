@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <launch>
 	<param name="method" type="string" value="fd" />
-    <param name="horizon_N" type="int" value="10" />
+    <param name="horizon_N" type="int" value="20" />
 	<param name="control_step" type="double" value="0.1" />
-	<param name="subdivision_per_step" type="int" value	="10" />
+	<param name="subdivision_per_step" type="int" value	="1" />
 
     <param name="xpr" type="double" value="5.0" />
     <param name="ypr" type="double" value="0.0" />
     <param name="titapr" type="double" value="0.0" />
 
 	<param name="distance" type="double" value="3.0" />
-    <param name="yaw" type="double" value="3.14" />
+    <param name="yaw" type="double" value="1.57" />
 	<param name="angle_tita" type="double" value="0.0" />
 	
 	<param name="K_distance" type="double" value="1.0" />
