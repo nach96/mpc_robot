@@ -11,7 +11,7 @@
 #include "mynlp_ss.hpp"
 #include "mynlp_ms.hpp"
 #include "mynlp_fd.hpp"
-#include "old_mynlp.hpp"
+//#include "old_mynlp.hpp"
 
 /*
 Description:

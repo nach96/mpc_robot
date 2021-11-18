@@ -1,7 +1,6 @@
 #include "mynlp.hpp"
 #include <vector>
 
-
 //////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////          FG_eval          //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -77,6 +76,9 @@ std::string myNLP::set_options(void){
 void myNLP::save_solution(CppAD::ipopt::solve_result<Dvector>solution, int N){
     std::vector<double> Vr(&solution.x[V_start_], &solution.x[W_start_-1]);
     std::vector<double> Wr(&solution.x[W_start_], &solution.x[W_start_+N-2]);
+
+    Vr_=Vr;
+    Wr_=Wr;
 
     //printf("Vr:");
     std::cout << " \n";

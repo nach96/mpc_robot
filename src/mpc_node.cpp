@@ -138,6 +138,7 @@ void Mpc_node::calculate_fake_path(double _xr, double _yr, double _wr,double _xp
     pubPath.publish(path);
 }
 
+/*
 void Mpc_node::publish_new_path(tf::TransformListener* transform_listener, myNLP* mynlp){
     path.poses.resize(N-2);
     for( unsigned i=2; i<mynlp->Xr.size(); ++i){ //I dont send the 0 pose. Start with 1 
@@ -164,11 +165,12 @@ void Mpc_node::publish_new_path(tf::TransformListener* transform_listener, myNLP
     path.header.frame_id= "map";
     pubPath.publish(path);
 }
+*/
 
 void Mpc_node::publish_new_actions(myNLP* mynlp){
     geometry_msgs::Twist cmd_vel;
-    cmd_vel.linear.x = mynlp->Vr[0];
-    cmd_vel.angular.z = mynlp->Wr[0];
+    cmd_vel.linear.x = mynlp->getV()[0];
+    cmd_vel.angular.z = mynlp->getW()[0];
     pubV.publish(cmd_vel);
 }
 

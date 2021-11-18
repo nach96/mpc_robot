@@ -65,6 +65,9 @@ public:
     virtual void my_solve(int N, double dt, double xp, double yp, double ap,double dist, double ang, double yaw, double K1, double K2, double K3, double K4, double K5){};
     void save_solution(CppAD::ipopt::solve_result<Dvector> solution, int N);
     std::string set_options(void);
+    std::vector<double> getV(){return Vr_;};
+    std::vector<double> getW(){return Wr_;};
+
     //void set_limits(Dvector x_l, Dvector x_u, Dvector g_l, Dvector g_u);
 
     /*
@@ -97,5 +100,8 @@ protected:
     CppAD::ipopt::solve_result<Dvector> solution_;
     double av_ = 1*0.1; //Maximum long acceleration
     double aw_ = 1*0.1;
+    //Calculated actions
+    std::vector<double> Vr_;
+    std::vector<double> Wr_;
 };
 #endif // MYNLP_H

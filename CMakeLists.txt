@@ -70,9 +70,14 @@ target_link_libraries(oc_ex ${catkin_LIBRARIES})
 #########################
 ## MPC_node
 #########################
-add_executable(mpc_node src/mpc_node.cpp)
+add_library(mpc_node src/mpc_node.cpp)
 target_link_libraries(mpc_node myNLPlib_ss myNLPlib_ms myNLPlib_fd myNLPlib_old)
 target_link_libraries(mpc_node ${catkin_LIBRARIES})
+
+
+add_executable(mpc_main src/mpc_main.cpp)
+target_link_libraries(mpc_main mpc_node)
+target_link_libraries(mpc_main ${catkin_LIBRARIES})
 
 #########################
 ## Objective move
